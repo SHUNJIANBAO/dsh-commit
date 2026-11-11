@@ -1,0 +1,5 @@
+node_modules/
+_scratch*/
+_plugin_stage/
+err.txt
+*.log

@@ -1,0 +1,10 @@
+# dsh-commit bundle patch：在 dsh-base 层之上插入一行。
+#
+# 本包只有浏览器半（lib/client.js）；lib/index.js 是空 apply，只为让这一行有
+# 一个宿主侧条目可以挂载。dsh-client-modules 按包名把浏览器半挂到同一行上。
+#
+# 本文件由 dsh.bundle.patch 机制自动注入，profile 的 cordis.patch.yml 不要再手写
+# 同一行，否则会重复挂载。
+- insert:
+    - id: dsh-commit
+      name: 'dsh-commit'

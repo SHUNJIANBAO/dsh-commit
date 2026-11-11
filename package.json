@@ -1,0 +1,52 @@
+{
+  "name": "dsh-commit",
+  "version": "0.1.0",
+  "description": "一键提交按钮：点击后代替你在当前会话发一条指令，由 Agent 识别 Git/SVN、总结当前改动、精简描述并提交推送。",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "cordis",
+    "git",
+    "svn",
+    "commit",
+    "web-ui"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-api-remotes",
+        "@deepseek-ai/dsh-client-ui-conversation"
+      ],
+      "platform": "web"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SHUNJIANBAO/dsh-commit.git"
+  },
+  "scripts": {
+    "test": "node test/offline-regression.mjs"
+  }
+}
